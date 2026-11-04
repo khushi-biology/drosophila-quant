@@ -1,0 +1,38 @@
+Package: embryoIFquant
+Type: Package
+Title: Embryo-Level Quantification of Nuclear Immunofluorescence
+Version: 0.1.0
+Authors@R: person("Khushi", "Singh", email = "khushisi175@gmail.com", role = c("aut", "cre"))
+Description: Turns per-nucleus intensity tables exported from Fiji (ROI Manager,
+    Multi Measure) into embryo-level biological replicates and genotype effects.
+    Nuclei are quality-controlled (saturation, area outliers), within-nucleus
+    ratios are formed, nuclei are summarised to images and images to embryos,
+    and each genotype is compared with a control by Welch t tests on log2 embryo
+    values with Holm correction, checked by a mixed model. Independent imaging
+    sessions are combined on a relative scale, never by pooling raw intensities.
+    Superplots, forest plots and power calculations are included.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 4.1)
+Imports:
+    dplyr (>= 1.1.0),
+    tidyr,
+    readr,
+    stringr,
+    purrr,
+    tibble,
+    ggplot2,
+    rlang,
+    stats,
+    utils,
+    grDevices
+Suggests:
+    ggbeeswarm,
+    lmerTest,
+    lme4,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Roxygen: list(markdown = TRUE)
+URL: https://github.com/khushi-biology/embryo-ifquant
+BugReports: https://github.com/khushi-biology/embryo-ifquant/issues
+Config/roxygen2/version: 8.1.1

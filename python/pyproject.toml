@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "embryo-ifquant"
+version = "0.1.0"
+description = "Image analysis, figures and document tools for quantifying nuclear immunofluorescence in Drosophila embryos"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Khushi Singh", email = "khushisi175@gmail.com" }]
+requires-python = ">=3.9"
+keywords = ["microscopy", "immunofluorescence", "Drosophila", "embryo", "histone", "segmentation", "Fiji"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Image Processing",
+]
+dependencies = ["numpy>=1.22", "scipy>=1.8", "scikit-image>=0.19", "tifffile>=2022.5", "Pillow>=9", "matplotlib>=3.5"]
+
+[project.optional-dependencies]
+czi = ["czifile>=2019.7", "imagecodecs"]
+roi = ["roifile>=2022.9"]
+office = ["python-docx>=1.1", "python-pptx>=0.6.23", "lxml>=4.9", "pymupdf>=1.24"]
+all = ["embryo-ifquant[czi,roi,office]"]
+dev = ["embryo-ifquant[all]", "pytest>=7"]
+
+[project.scripts]
+embryo-ifquant = "embryo_ifquant.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/khushi-biology/embryo-ifquant"
+Issues = "https://github.com/khushi-biology/embryo-ifquant/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
