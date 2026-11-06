@@ -1,0 +1,30 @@
+test_that("metadata is cleaned and renamed", {
+  d <- synthetic_dir()
+  md <- read_dam_metadata(file.path(d, "metadata.csv"), recode = c(ctl2 = "control2"))
+  expect_equal(nrow(md), 15)
+  expect_true("genotype" %in% names(md))
+  expect_false("indiv." %in% names(md))
+  expect_setequal(unique(md$genotype), c("WT", "mut", "control2"))
+  expect_type(md$region_id, "integer")
+  expect_error(read_dam_metadata(file.path(d, "metadata.csv"), group_col = "line"), "missing")
+})
+
+test_that("metadata template has one row per channel", {
+  t <- make_metadata_template(c("M1.txt", "M2.txt"), "2026-01-01 09:00:00", "2026-01-02 09:00:00")
+  expect_equal(nrow(t), 64)
+  expect_named(t, c("file", "region_id", "start_datetime", "stop_datetime", "genotype", "sex"))
+})
+
+test_that("monitor dates are shifted without touching the input", {
+  d <- synthetic_dir()
+  inp <- file.path(d, "Monitor1.txt"); before <- tools::md5sum(inp)
+  out <- file.path(d, "shifted", "Monitor1.txt"); dir.create(dirname(out))
+  expect_equal(shift_monitor_dates(inp, out, "2026-01-01", "2026-03-01"), 59L)
+  expect_equal(unname(tools::md5sum(inp)), unname(before))
+  a <- utils::read.delim(inp, header = FALSE); b <- utils::read.delim(out, header = FALSE)
+  expect_equal(b$V3, a$V3)
+  expect_equal(b$V2[1], "1 Mar 26")
+  expect_equal(b[, 11:42], a[, 11:42])
+  expect_error(shift_monitor_dates(inp, inp, "2026-01-01", "2026-03-01"), "differ")
+  expect_error(shift_monitor_dates(inp, out, "2026-01-01", "2026-03-01"), "exists")
+})

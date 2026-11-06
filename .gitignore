@@ -13,6 +13,7 @@
 *.RData
 *.Rdata
 *.h5
+Monitor*.txt
 *.npy
 *.npz
 data/

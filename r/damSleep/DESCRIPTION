@@ -1,0 +1,38 @@
+Package: damSleep
+Type: Package
+Title: Sleep and Locomotor Activity from Drosophila Activity Monitor (DAM) Recordings
+Version: 0.1.0
+Authors@R: person("Khushi", "Singh", email = "khushisi175@gmail.com", role = c("aut", "cre"))
+Description: A configurable pipeline for sleep and activity experiments recorded
+    with Drosophila Activity Monitors (TriKinetics DAM2). Builds on the
+    Rethomics packages (behavr, damr, sleepr, ggetho): reads and cleans the
+    metadata, loads the monitor files with sleep annotation (immobility of at
+    least 5 min), removes dead animals while keeping flies that are only asleep
+    at the end of the recording, and summarises each fly (total, day and night
+    sleep, bout number and length, sleep latency after lights-off, activity per
+    day and per waking minute). Each test genotype is compared with every
+    control by Wilcoxon rank-sum tests with Holm correction, separately by sex.
+    Quality-control tiles, population sleep and activity profiles, actograms,
+    profiles of each mutant against the controls and annotated summary plots
+    are written together with the tables.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 4.1)
+Imports:
+    behavr,
+    damr,
+    sleepr,
+    ggetho,
+    data.table,
+    ggplot2,
+    scales,
+    stats,
+    utils,
+    grDevices
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Roxygen: list(markdown = TRUE)
+URL: https://github.com/khushi-biology/embryo-ifquant
+BugReports: https://github.com/khushi-biology/embryo-ifquant/issues
+Config/roxygen2/version: 8.1.1

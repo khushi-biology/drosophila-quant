@@ -17,6 +17,18 @@ From a local copy of the repository:
 R CMD INSTALL r/embryoIFquant
 ```
 
+## R package `damSleep` (DAM sleep and activity)
+
+Requires the Rethomics packages behavr, damr, sleepr and ggetho, plus
+data.table, ggplot2 and scales.
+
+```r
+install.packages(c("behavr", "damr", "sleepr", "ggetho", "data.table", "ggplot2", "scales"))
+# if a Rethomics package is not available from CRAN:
+# remotes::install_github(c("rethomics/behavr", "rethomics/damr", "rethomics/sleepr", "rethomics/ggetho"))
+remotes::install_github("khushi-biology/embryo-ifquant", subdir = "r/damSleep")
+```
+
 ## Python package `embryo_ifquant`
 
 Requires Python ≥ 3.9. Core dependencies: numpy, scipy, scikit-image,

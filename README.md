@@ -1,10 +1,15 @@
 # embryo-ifquant
 
-Tools to quantify nuclear immunofluorescence (for example histone modifications)
-in *Drosophila* embryos imaged by confocal microscopy, from raw images to
-embryo-level statistics, publication figures and the documents that report them.
+Analysis tools for *Drosophila* experiments, from raw data to statistics,
+publication figures and the documents that report them:
 
-The library has two parts that share one data format, the per-nucleus intensity
+* **nuclear immunofluorescence in embryos** (for example histone
+  modifications) imaged by confocal microscopy, quantified at the level of the
+  embryo;
+* **sleep and locomotor activity** of single flies recorded in Drosophila
+  Activity Monitors (DAM).
+
+The immunofluorescence tools share one data format, the per-nucleus intensity
 table written by Fiji (ROI Manager → *Multi Measure*):
 
 | Part | Language | What it does |
@@ -28,6 +33,12 @@ table written by Fiji (ROI Manager → *Multi Measure*):
  embryo_ifquant.office: Word / PowerPoint / PDF
 ```
 
+The sleep tools are a separate R package:
+
+| Part | Language | What it does |
+|---|---|---|
+| [`r/damSleep`](r/damSleep) | R | Reads DAM monitor files and the plate layout, annotates sleep (≥ 5 min immobility), removes dead flies without mistaking a final long sleep for death, summarises each fly (total, day and night sleep, bout number and length, latency, activity per waking minute), compares each mutant with each control by sex (Wilcoxon, Holm) and writes QC tiles, sleep and activity profiles, actograms and annotated summary plots. See [docs/dam-sleep.md](docs/dam-sleep.md). |
+
 ## Installation
 
 **R package**
@@ -35,6 +46,7 @@ table written by Fiji (ROI Manager → *Multi Measure*):
 ```r
 # install.packages("remotes")
 remotes::install_github("khushi-biology/embryo-ifquant", subdir = "r/embryoIFquant")
+remotes::install_github("khushi-biology/embryo-ifquant", subdir = "r/damSleep")   # DAM sleep
 ```
 
 **Python package** (Python ≥ 3.9)
@@ -108,12 +120,14 @@ Details and the reasoning: [docs/statistics.md](docs/statistics.md).
 | [docs/r-package.md](docs/r-package.md) | R function reference |
 | [docs/python-package.md](docs/python-package.md) | Python module reference and command-line tool |
 | [docs/documents.md](docs/documents.md) | Word, PowerPoint and PDF helpers |
+| [docs/dam-sleep.md](docs/dam-sleep.md) | DAM sleep and activity: input, curation, measures, statistics, figures |
 
 ## Repository layout
 
 ```
 embryo-ifquant/
-├── r/embryoIFquant/          R package (R/, man/, tests/, inst/config, inst/scripts)
+├── r/embryoIFquant/          R package: embryo immunofluorescence (R/, man/, tests/, inst/)
+├── r/damSleep/               R package: DAM sleep and activity (R/, man/, tests/, inst/)
 ├── python/                   Python package
 │   ├── src/embryo_ifquant/
 │   │   ├── io/               TIFF, CZI, Fiji tables and ROI sets
@@ -133,6 +147,7 @@ No raw data, results or images are kept in this repository.
 ```bash
 cd python && pip install -e ".[dev]" && pytest
 Rscript -e 'testthat::test_local("r/embryoIFquant")'
+Rscript -e 'testthat::test_local("r/damSleep")'
 ```
 
 ## Citation
