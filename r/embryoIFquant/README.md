@@ -1,10 +1,10 @@
 # embryoIFquant (R)
 
 Embryo-level quantification of nuclear immunofluorescence from Fiji intensity
-tables. Part of [embryo-ifquant](https://github.com/khushi-biology/embryo-ifquant).
+tables. Part of [drosophila-quant](https://github.com/khushi-biology/drosophila-quant).
 
 ```r
-remotes::install_github("khushi-biology/embryo-ifquant", subdir = "r/embryoIFquant")
+remotes::install_github("khushi-biology/drosophila-quant", subdir = "r/embryoIFquant")
 res <- embryoIFquant::run_experiment("config.R")
 ```
 

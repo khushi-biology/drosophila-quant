@@ -34,8 +34,8 @@ lights-on time given in \code{start_datetime} of the metadata.
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/khushi-biology/embryo-ifquant}
-  \item Report bugs at \url{https://github.com/khushi-biology/embryo-ifquant/issues}
+  \item \url{https://github.com/khushi-biology/drosophila-quant}
+  \item Report bugs at \url{https://github.com/khushi-biology/drosophila-quant/issues}
 }
 
 }

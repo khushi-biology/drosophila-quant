@@ -33,6 +33,6 @@ Suggests:
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Roxygen: list(markdown = TRUE)
-URL: https://github.com/khushi-biology/embryo-ifquant
-BugReports: https://github.com/khushi-biology/embryo-ifquant/issues
+URL: https://github.com/khushi-biology/drosophila-quant
+BugReports: https://github.com/khushi-biology/drosophila-quant/issues
 Config/roxygen2/version: 8.1.1

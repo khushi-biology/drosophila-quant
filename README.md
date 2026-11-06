@@ -1,4 +1,4 @@
-# embryo-ifquant
+# drosophila-quant
 
 Analysis tools for *Drosophila* experiments, from raw data to statistics,
 publication figures and the documents that report them:
@@ -45,14 +45,14 @@ The sleep tools are a separate R package:
 
 ```r
 # install.packages("remotes")
-remotes::install_github("khushi-biology/embryo-ifquant", subdir = "r/embryoIFquant")
-remotes::install_github("khushi-biology/embryo-ifquant", subdir = "r/damSleep")   # DAM sleep
+remotes::install_github("khushi-biology/drosophila-quant", subdir = "r/embryoIFquant")
+remotes::install_github("khushi-biology/drosophila-quant", subdir = "r/damSleep")   # DAM sleep
 ```
 
 **Python package** (Python ≥ 3.9)
 
 ```bash
-pip install "embryo-ifquant[all] @ git+https://github.com/khushi-biology/embryo-ifquant.git#subdirectory=python"
+pip install "embryo-ifquant[all] @ git+https://github.com/khushi-biology/drosophila-quant.git#subdirectory=python"
 ```
 
 The extras are `czi` (Zeiss files), `roi` (ImageJ ROI sets), `office` (Word,
@@ -125,7 +125,7 @@ Details and the reasoning: [docs/statistics.md](docs/statistics.md).
 ## Repository layout
 
 ```
-embryo-ifquant/
+drosophila-quant/
 ├── r/embryoIFquant/          R package: embryo immunofluorescence (R/, man/, tests/, inst/)
 ├── r/damSleep/               R package: DAM sleep and activity (R/, man/, tests/, inst/)
 ├── python/                   Python package

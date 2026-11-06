@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
-title: "embryo-ifquant: quantification of nuclear immunofluorescence in Drosophila embryos and of sleep in Drosophila Activity Monitors"
+title: "drosophila-quant: quantification of nuclear immunofluorescence in Drosophila embryos and of sleep in Drosophila Activity Monitors"
 authors:
   - family-names: Singh
     given-names: Khushi
@@ -8,7 +8,7 @@ authors:
 version: 0.2.0
 date-released: 2026-11-06
 license: MIT
-repository-code: "https://github.com/khushi-biology/embryo-ifquant"
+repository-code: "https://github.com/khushi-biology/drosophila-quant"
 keywords:
   - microscopy
   - immunofluorescence

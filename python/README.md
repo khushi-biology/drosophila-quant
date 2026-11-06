@@ -2,7 +2,7 @@
 
 Image analysis, figures and document tools for quantifying nuclear
 immunofluorescence in *Drosophila* embryos. Part of
-[embryo-ifquant](https://github.com/khushi-biology/embryo-ifquant); the
+[drosophila-quant](https://github.com/khushi-biology/drosophila-quant); the
 statistics are in the companion R package `embryoIFquant`.
 
 ```bash

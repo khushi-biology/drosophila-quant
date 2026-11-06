@@ -8,7 +8,7 @@ ggplot2 and rlang. Optional: ggbeeswarm (nicer point layout), lmerTest and lme4
 
 ```r
 install.packages("remotes")
-remotes::install_github("khushi-biology/embryo-ifquant", subdir = "r/embryoIFquant")
+remotes::install_github("khushi-biology/drosophila-quant", subdir = "r/embryoIFquant")
 ```
 
 From a local copy of the repository:
@@ -26,7 +26,7 @@ data.table, ggplot2 and scales.
 install.packages(c("behavr", "damr", "sleepr", "ggetho", "data.table", "ggplot2", "scales"))
 # if a Rethomics package is not available from CRAN:
 # remotes::install_github(c("rethomics/behavr", "rethomics/damr", "rethomics/sleepr", "rethomics/ggetho"))
-remotes::install_github("khushi-biology/embryo-ifquant", subdir = "r/damSleep")
+remotes::install_github("khushi-biology/drosophila-quant", subdir = "r/damSleep")
 ```
 
 ## Python package `embryo_ifquant`
@@ -35,7 +35,7 @@ Requires Python ≥ 3.9. Core dependencies: numpy, scipy, scikit-image,
 tifffile, Pillow, matplotlib.
 
 ```bash
-pip install "embryo-ifquant[all] @ git+https://github.com/khushi-biology/embryo-ifquant.git#subdirectory=python"
+pip install "embryo-ifquant[all] @ git+https://github.com/khushi-biology/drosophila-quant.git#subdirectory=python"
 ```
 
 | Extra | Adds | Needed for |

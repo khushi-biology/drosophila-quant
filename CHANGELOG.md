@@ -2,6 +2,9 @@
 
 ## 0.2.0 (2026-11-06)
 
+* Repository renamed from embryo-ifquant to drosophila-quant. The Python
+  package and command-line tool keep the name `embryo-ifquant`.
+
 * New R package `damSleep`: sleep and locomotor activity from Drosophila
   Activity Monitor recordings. Metadata cleaning and template, monitor date
   correction, sleep annotation, curation of dead flies that keeps flies only

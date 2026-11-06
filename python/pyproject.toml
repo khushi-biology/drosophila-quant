@@ -30,8 +30,8 @@ dev = ["embryo-ifquant[all]", "pytest>=7"]
 embryo-ifquant = "embryo_ifquant.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/khushi-biology/embryo-ifquant"
-Issues = "https://github.com/khushi-biology/embryo-ifquant/issues"
+Homepage = "https://github.com/khushi-biology/drosophila-quant"
+Issues = "https://github.com/khushi-biology/drosophila-quant/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
